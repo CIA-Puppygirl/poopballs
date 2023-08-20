@@ -1,5 +1,12 @@
+var ::= poop
+var ::= balls
+var ::= orphan
+var ::= your_mom 
+var ::= gay
+var ::= fuck
 {
-    
+
+
     if poop 
     
     
@@ -7,5 +14,11 @@
 
         {
 orphan child:
-            aborted 
-        }
+            aborted ()
+            repeat
+        
+
+        do your_mom
+
+            if your_mom = gay do fuck
+            }
