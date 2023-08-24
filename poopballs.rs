@@ -1,32 +1,69 @@
-fn balls() {}
+fn balls(poop_num: u8, mut balls_num: u8) -> u8 {
+    balls_num += poop_num;
+    println!("balls incremented by {}, now {}", balls_num, poop_num);
+    return balls_num;
+}
 
-fn aborted() {}
+fn poop(balls_num: u8, mut poop_num: u8) -> u8 {
+    poop_num += balls_num;
+    println!("poop incremented by {}, now {}", balls_num, poop_num);
+    return poop_num;
+}
 
-fn your_mom() {}
+fn abort(_orphan: u8) -> u8 {
+    return 0;
+}
 
-fn fuck() {}
+fn fuck(mom: &str) {
+    println!("your mom({}) has been fucked and is now pregnant", mom);
+}
+
+fn conversion_therapy<'life>() -> &'life str {
+    println!("your mom gay");
+    return "gay";
+}
 
 fn main() {
-    let poop = true;
-    let orphan = false;
-    let your_mom = "some value";
-    let gay = "some other value";
+    let mut poop_num: u8 = 2;
+    let mut balls_num: u8 = 1;
+    let mut orphan: u8 = 0;
+    let mut your_mom: &str = "straight";
 
-    // First Code Block (Conditional Statement)
-    if poop {
-        balls();
+    while poop_num < 233 {
+        if poop_num > balls_num {
+            balls_num = balls(poop_num, balls_num);
+        } else if balls_num > poop_num {
+            poop_num = poop(balls_num, poop_num);
+        }
     }
+   
 
-    // Second Code Block
-    if orphan {
-        aborted();
-        loop {
-            your_mom();
-            if your_mom == gay {
-                fuck();
-            }
-            // A proper condition should be used here to terminate the loop
-            break;
+    if orphan > 0 {
+        println!("there is an orphan child");
+        orphan = abort(orphan);
+        println!("orphan aborted");
+        if your_mom == "gay" {
+            fuck(your_mom);
+            orphan += 1;
+            println!("{} orphan child born", orphan);
+        } else {
+            println!("your mom straight");
+            your_mom = conversion_therapy();
+            fuck(your_mom);
+            orphan += 1;
+            println!("{} orphan child born", orphan);
+        }
+    } else {
+        if your_mom == "gay" {
+            fuck(your_mom);
+            orphan += 1;
+            println!("{} orphan child born", orphan);
+        } else {
+            println!("your mom straight");
+            your_mom = conversion_therapy();
+            fuck(your_mom);
+            orphan += 1;
+            println!("{} orphan child born", orphan);
         }
     }
 }
