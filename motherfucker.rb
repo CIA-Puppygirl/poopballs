@@ -1,4 +1,6 @@
 print "What is your mother's first name? :) "
 your_moms_name = gets.chomp
 your_moms_name.capitalize!
-print "I fucked #{your_moms_name}."
+print "I fucked #{your_moms_name}, you absolute idiot, you total buffoon, fuck you."
+
+
