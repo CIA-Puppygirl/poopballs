@@ -1,6 +1,6 @@
 fn balls(poop_num: u8, mut balls_num: u8) -> u8 {
     balls_num += poop_num;
-    println!("balls incremented by {}, now {}", balls_num, poop_num);
+    println!("balls incremented by {}, now {}", poop_num, balls_num);
     return balls_num;
 }
 
